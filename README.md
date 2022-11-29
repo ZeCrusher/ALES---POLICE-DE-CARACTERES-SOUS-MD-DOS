@@ -1,4 +1,4 @@
-# ALES---Polices-de-caract-re-sous-MSDOS
+# ALES---Polices-de-caractères-sous-MSDOS
 possibilité de changer la police de caractère et d'éditer/créer une police.
 
 
