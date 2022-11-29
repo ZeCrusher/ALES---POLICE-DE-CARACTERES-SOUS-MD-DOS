@@ -1,7 +1,9 @@
 # ALES---Polices-de-caractères-sous-MSDOS
-possibilité de changer la police de caractère et d'éditer/créer une police.
+possibilité de changer la police de caractères et également d'éditer et de créer une police.
 
+Il est possible de charger une police en ligne de commande. Les polices sont avec l'extension ALS.
 
+Exemple ales /charger italic.als  -> pour changer une police "italic".
 
 ![Image1](https://user-images.githubusercontent.com/102222839/204508902-270d774f-d349-44d1-b70a-28c1518b805e.jpg)
 
