@@ -20,7 +20,7 @@ possibilité de changer la police de caractère et d'éditer/créer une police.
 
 ![Image6](https://user-images.githubusercontent.com/102222839/204509096-6ffa8d17-b2f4-4c22-b4a2-c742b1251c9c.jpg)
 
-
+Il reste la partie Compilation EXE à faire. Je ne sais pas si j'en aurai le temps.
 ![Image7](https://user-images.githubusercontent.com/102222839/204509118-78c61bf9-c29a-43b8-ab33-9bc83a221404.jpg)
 
 
