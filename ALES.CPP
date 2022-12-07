@@ -1,8 +1,10 @@
 // Programme ALES  par ZeCrusher
 // Utilitaire en Mode texte 80x25
-// RÇalisÇ le:     1994/12/12
-// Därniäre modif: 2022/11/29
+// R‚Äöalis‚Äö le:     1994/12/12
+// Mise √† jour du code : 2022/11/29
 
+
+// A compiler avec Borlands C++ 3.1 et DOSBOX.
 
 #if !defined( __DOS_H )
  #include <dos.h>
@@ -41,7 +43,7 @@
  #define INIT_BOUTON			0
  #define BOUTON_DROIT		    2	// Les boutons de la souris sont ici definie pour une souris
  #define BOUTON_GAUCHE 			1	// donc seulement deux boutons, le DROIT et le GAUCHE, sont actifs
- #define BOUTON_GAUCHE_DROIT	3	// pour une souris Ö trois bouton
+ #define BOUTON_GAUCHE_DROIT	3	// pour une souris ‚Ä¶ trois bouton
  #define INIT_SOURIS			0
  #define MONTRE_SOURIS			1
  #define CACHE_SOURIS			2
@@ -51,9 +53,9 @@
  #define Repertoire_max			999
 
 
-// Test de la configuration de la MÇmoire Ö la compilation .....
+// Test de la configuration de la M‚Äömoire ‚Ä¶ la compilation .....
 
- #include "c:\ALES\fmem__.cpp" // Verifie les Erreurs du au modele de mÇmoire
+ #include "c:\ALES\fmem__.cpp" // Verifie les Erreurs du au modele de m‚Äömoire
  #include "c:\ALES\FMOUSE.H"
  #include "c:\ALES\fmenu.h"
  #include "c:\ALES\fcadre.h"
@@ -90,7 +92,7 @@ extern long ficompt;
 
 	extern int posx,posy,bouton,   // position de la souris sur l'ecran multiple de 8
 		ScrMaxX,ScrMaxY,
-		valeur_xxreel,     // coordonner de la sortie qui est Çgale a (posx/8)+1   1 a 25
+		valeur_xxreel,     // coordonner de la sortie qui est ‚Äögale a (posx/8)+1   1 a 25
 		valeur_yyreel;
 
 	extern int	nbr_fichier,nbr_repertoire,nbr_lecteur_logique,nbr_lecteur_totaux;
@@ -102,7 +104,7 @@ extern long ficompt;
 
 	struct liste_fichier	{
 		char files[14];	// nom du fichier 13 = 8 char + 1 "." + 3 char extention
-		unsigned long	taille;  // + 1 de code de spÇcification
+		unsigned long	taille;  // + 1 de code de sp‚Äöcification
 		char attribut;
 	};
 	extern  struct	liste_fichier num_fichier[Fichier_max];
@@ -138,7 +140,7 @@ int main(char argc, char **argv)
 	if ((argc>3)||(argc==1)) {
 		clrscr();
 		color(15,1);
-		cprintf("\n\r\n\r ALES changement des caractäres ascii [ T S K _96]\n\r");
+		cprintf("\n\r\n\r ALES changement des caract≈†res ascii [ T S K _96]\n\r");
 		color(0,7);
 		cprintf("\n\rALES /modif fichier.als ");
 		color(7,0);
@@ -146,7 +148,7 @@ int main(char argc, char **argv)
 		color(0,7);
 		cprintf("\n\rALES /charger fichier.als \n\r");
 		color(7,0);
-		cprintf("  pour charger une police de caractäre dans l'Çditeur de caractäres (16x8)\n\r");
+		cprintf("  pour charger une police de caract≈†re dans l'‚Äöditeur de caract≈†res (16x8)\n\r");
 		printf("\n\n\n");
 		exit(0);
 	}
@@ -160,7 +162,7 @@ int main(char argc, char **argv)
 		cprintf("liste 1 : ABCDEFGHIJKLMNOPQRSTUVWXYZ\n\r");
 		cprintf("liste 2 : abcdefghijklmnopqrstuvwxyz\n\r");
 		cprintf("liste 3 : 0 1 2 3 4 5 6 7 8 9 0\n\r");
-		cprintf("liste 4 : Ä Å Ç É Ñ Ö Ü á à â ä ã å ç\n\r");
+		cprintf("liste 4 : ‚Ç¨ ¬Å ‚Äö ∆í ‚Äû ‚Ä¶ ‚Ä† ‚Ä° ÀÜ ‚Ä∞ ≈† ‚Äπ ≈í ¬ç\n\r");
 		exit(0);
 	}
 
@@ -187,18 +189,18 @@ int main(char argc, char **argv)
 	color(7,0);
 	clrscr();
 	textcolor(WHITE);textbackground(LIGHTGRAY);
-	for(int i1=0;i1<25;i1++) for(int i2=0;i2<5;i2++) cputs ("≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤");
+	for(int i1=0;i1<25;i1++) for(int i2=0;i2<5;i2++) cputs ("¬≤¬≤¬≤¬≤¬≤¬≤¬≤¬≤¬≤¬≤¬≤¬≤¬≤¬≤¬≤¬≤");
 	cadre_plein(4,5,19,22,SIMPLE,WHITE,BLUE,1);      // dessine le cadre
 	cadre_plein(24,4,72,22,DOUBLE,15,7,1);      // dessine le cadre
 
 	for (int in=0;in<16;in++) {
 		gotoxy(13,6+in);color(WHITE,1);
-		cprintf("≥");
+		cprintf("¬≥");
 	}
-	gotoxy(13,5);cprintf("¬");
-	gotoxy(13,22);cprintf("¡");
-	locatext(14,22,"¥   √",WHITE+16*BLUE);
-	locatext(6,22,"¥   √",WHITE+16*BLUE);
+	gotoxy(13,5);cprintf("√Ç");
+	gotoxy(13,22);cprintf("√Å");
+	locatext(14,22,"¬¥   √É",WHITE+16*BLUE);
+	locatext(6,22,"¬¥   √É",WHITE+16*BLUE);
 	locatext(15,22,"- +",14+16*1);
 
 
@@ -248,7 +250,7 @@ int main(char argc, char **argv)
 		if ((bouton==BOUTON_DROIT)&&(valeur_yyreel>6)&&(valeur_yyreel<20)&&(valeur_xxreel>27)&&(valeur_xxreel<67))
 		{
 			cache_souris();
-			gettext(1, 1, 80, 25,ecran); 		// Pour ne pas àtre obliger de tout rÇafficher
+			gettext(1, 1, 80, 25,ecran); 		// Pour ne pas ÀÜtre obliger de tout r‚Äöafficher
 			pas=((valeur_xxreel-27)/2+20*(valeur_yyreel-7));
 			gotoxy(28,21);color(0,7);
 			cprintf("car %03d <=> %c",pas,pas);
@@ -258,9 +260,9 @@ int main(char argc, char **argv)
 			afficher_liste();
 			cadre_plein(20,7,70,9,SIMPLE,WHITE,BLUE,1);      // dessine le cadre
 			gotoxy(23,8);color(YELLOW,BLUE);
-			cprintf("Le caractäre dÇsactivÇ pour l'enregistrement");
+			cprintf("Le caract≈†re d‚Äösactiv‚Äö pour l'enregistrement");
 			delay(500);
-			puttext(1,1,80,25,ecran); 		// Pour ne pas àtre obliger de tout rÇafficher
+			puttext(1,1,80,25,ecran); 		// Pour ne pas ÀÜtre obliger de tout r‚Äöafficher
 			afficher_liste();
 			montre_souris();
 		}
@@ -318,14 +320,14 @@ int main(char argc, char **argv)
 			}
 			if (touche=='S')
 			{  cache_souris();
-				gettext(1, 1, 80, 25,ecran); 		// Pour ne pas àtre obliger de tout rÇafficher
+				gettext(1, 1, 80, 25,ecran); 		// Pour ne pas ÀÜtre obliger de tout r‚Äöafficher
 				cadre_plein(20,7,70,9,SIMPLE,WHITE,BLUE,1);      // dessine le cadre
 				gotoxy(23,8);color(YELLOW,BLUE);
 				cprintf("Engeristrement de la table >");
 				color(11,BLUE);cprintf(" %s",nom_defaut);
 				delay(500);
 				sauver_table(nom_defaut);
-				puttext(1,1,80,25,ecran); 		// Pour ne pas àtre obliger de tout rÇafficher
+				puttext(1,1,80,25,ecran); 		// Pour ne pas ÀÜtre obliger de tout r‚Äöafficher
 				montre_souris();
 			}
 		 }
@@ -338,7 +340,7 @@ int main(char argc, char **argv)
 			cache_souris();
 			if (table[valeur_xxreel-5][valeur_yyreel-6]==0) {
 				gotoxy(valeur_xxreel,valeur_yyreel);color(12,1);
-				cprintf("€");
+				cprintf("√õ");
 				table[valeur_xxreel-5][valeur_yyreel-6]=1;
 				delay(200);
 			}
@@ -371,14 +373,14 @@ int main(char argc, char **argv)
 void definition_ascii_(byte table[16],int ascii)
 {
 //	union REGS regs;
-	struct REGPACK regpack; //Structure mÇmorisant les valeurs ÇchangÇes avec intr.
+	struct REGPACK regpack; //Structure m‚Äömorisant les valeurs ‚Äöchang‚Äöes avec intr.
 
 	regpack.r_cx=1;
-	regpack.r_dx=ascii; //'';
+	regpack.r_dx=ascii; //'√∞';
 	regpack.r_bx=0x1000;
 	regpack.r_ax=0x1100;
 	regpack.r_es=FP_SEG((char far *) table); // le segment de adresse longue
-	regpack.r_bp=FP_OFF((char far *) table); // valeur de dÇplacement de adresse longue
+	regpack.r_bp=FP_OFF((char far *) table); // valeur de d‚Äöplacement de adresse longue
 	intr(0x10,&regpack); // interface avec les interruptions logicielles du 80x86.
 
 }
@@ -417,7 +419,7 @@ int charger_table_(char nom_police[80])
 
 		if ((barre++)>6) {
 			barre=0;
-			gotoxy(24+(v++),16);cprintf("∞");
+			gotoxy(24+(v++),16);cprintf("¬∞");
 		}
 
 		for (int i=0;i<16;i++)  {
@@ -476,7 +478,7 @@ int fusionner_table_(char nom_police[80])
 	for (int a=0;a<255;a++) {
 		if ((barre++)>6) {
 			barre=0;
-			gotoxy(24+(v++),16);cprintf("∞");
+			gotoxy(24+(v++),16);cprintf("¬∞");
 		}
 
 		for (int i=0;i<16;i++)  {
@@ -537,7 +539,7 @@ int sauver_table(char nom_police[80])
 	{
 		if ((barre++)>6) {
 			barre=0;
-			gotoxy(24+(v++),16);cprintf("∞");
+			gotoxy(24+(v++),16);cprintf("¬∞");
 		}
 		for (int i=0;i<16;i++) {
 			fputc(((int)tab[a][i]),out);
@@ -556,10 +558,10 @@ int sauver_table(char nom_police[80])
 	}
 	fputs("\n\n",out);
 	fputs("1234567890123456 [X|K|D]-C-\n",out);
-	fputs("¿> Struct car <Ÿ  ¿ƒ≈ƒŸ ≥ \n",out);
-	fputs("  K ou X ou D  ƒƒƒƒƒŸ   ≥ \n",out);
-	fputs("Caractäre  ƒƒƒƒƒƒƒƒƒƒƒƒƒŸ \n",out);
-	fputs("K pour caractäre modifiÇ \n",out);
+	fputs("√Ä> Struct car <√ô  √Ä√Ñ√Ö√Ñ√ô ¬≥ \n",out);
+	fputs("  K ou X ou D  √Ñ√Ñ√Ñ√Ñ√Ñ√ô   ¬≥ \n",out);
+	fputs("Caract≈†re  √Ñ√Ñ√Ñ√Ñ√Ñ√Ñ√Ñ√Ñ√Ñ√Ñ√Ñ√Ñ√Ñ√ô \n",out);
+	fputs("K pour caract≈†re modifi‚Äö \n",out);
 	fputs("X pour aucune modification\n",out);
 	fputs("D Desactiver pour l'enregitrement\n",out);
 	fputs("<< Ales Version 0.1 >>\n",out);
@@ -586,14 +588,14 @@ color(12,1);
 		val=tab[numero][i];
 		ptr=0;
 			gotoxy(5,6+i);
-			if ((val-128) >= 0) { cprintf("€");val=val-128;table[ptr][i]=1; ptr++;} else { cprintf(" ");table[ptr][i]=0;ptr++; }
-			if ((val-64)  >= 0) { cprintf("€");val=val-64;table[ptr][i]=1; ptr++; } else { cprintf(" ");table[ptr][i]=0;ptr++; }
-			if ((val-32)  >= 0) { cprintf("€");val=val-32;table[ptr][i]=1; ptr++; } else { cprintf(" ");table[ptr][i]=0;ptr++; }
-			if ((val-16)  >= 0) { cprintf("€");val=val-16;table[ptr][i]=1; ptr++; } else { cprintf(" ");table[ptr][i]=0;ptr++; }
-			if ((val-8)   >= 0) { cprintf("€");val=val-8 ;table[ptr][i]=1; ptr++; } else { cprintf(" ");table[ptr][i]=0;ptr++; }
-			if ((val-4)   >= 0) { cprintf("€");val=val-4 ;table[ptr][i]=1; ptr++; } else { cprintf(" ");table[ptr][i]=0;ptr++; }
-			if ((val-2)   >= 0) { cprintf("€");val=val-2 ;table[ptr][i]=1; ptr++; } else { cprintf(" ");table[ptr][i]=0;ptr++; }
-			if ((val-1)   >= 0) { cprintf("€");val=val-1 ;table[ptr][i]=1; ptr++; } else { cprintf(" ");table[ptr][i]=0;ptr++; }
+			if ((val-128) >= 0) { cprintf("√õ");val=val-128;table[ptr][i]=1; ptr++;} else { cprintf(" ");table[ptr][i]=0;ptr++; }
+			if ((val-64)  >= 0) { cprintf("√õ");val=val-64;table[ptr][i]=1; ptr++; } else { cprintf(" ");table[ptr][i]=0;ptr++; }
+			if ((val-32)  >= 0) { cprintf("√õ");val=val-32;table[ptr][i]=1; ptr++; } else { cprintf(" ");table[ptr][i]=0;ptr++; }
+			if ((val-16)  >= 0) { cprintf("√õ");val=val-16;table[ptr][i]=1; ptr++; } else { cprintf(" ");table[ptr][i]=0;ptr++; }
+			if ((val-8)   >= 0) { cprintf("√õ");val=val-8 ;table[ptr][i]=1; ptr++; } else { cprintf(" ");table[ptr][i]=0;ptr++; }
+			if ((val-4)   >= 0) { cprintf("√õ");val=val-4 ;table[ptr][i]=1; ptr++; } else { cprintf(" ");table[ptr][i]=0;ptr++; }
+			if ((val-2)   >= 0) { cprintf("√õ");val=val-2 ;table[ptr][i]=1; ptr++; } else { cprintf(" ");table[ptr][i]=0;ptr++; }
+			if ((val-1)   >= 0) { cprintf("√õ");val=val-1 ;table[ptr][i]=1; ptr++; } else { cprintf(" ");table[ptr][i]=0;ptr++; }
 		}
 	montre_souris();
 }
@@ -621,12 +623,12 @@ void menu_copie(int num)
 {
 	int resultat_menu; // initialise  le resultat de menu_deroulant
 	char erreur_ecran[4096];
-	gettext(1, 1, 80, 25,erreur_ecran); 		// Pour ne pas àtre obliger de tout rÇafficher
-	char *str[]={ " _Annuler","ˇ"," Copier"," _Coller"," _Effacer"};
+	gettext(1, 1, 80, 25,erreur_ecran); 		// Pour ne pas ÀÜtre obliger de tout r‚Äöafficher
+	char *str[]={ " _Annuler","√ø"," Copier"," _Coller"," _Effacer"};
 
 	cache_souris();
 	// 	Parametres de menu_der
-	//					 type  cadre<ƒø    coulbar<ø <ø        ⁄coulcadreø     ⁄ƒ texte  ⁄lettre  ⁄ƒ > pointeur du tableau
+	//					 type  cadre<√Ñ¬ø    coulbar<¬ø <¬ø        √öcoulcadre¬ø     √ö√Ñ texte  √ölettre  √ö√Ñ > pointeur du tableau
 	resultat_menu=menu_der(13,3,11,6,6,DOUBLE,WHITE,RED,DARKGRAY,LIGHTGRAY,BLACK,LIGHTRED,str);
 	bouton=ZERO_BOUTON_APPUYER;
 
@@ -671,7 +673,7 @@ void menu_fichier(void)
 	byte texte_[80]={0};
 	char ecran[4096];
 	char r[100];
-	char *str[]={" _Enregister  "," Enregister _Sous ","ˇ"," _Charger une table","ˇ"," _Fusionner une table","ˇ"," _Compilation .EXE","ˇ"," _Quitter "};
+	char *str[]={" _Enregister  "," Enregister _Sous ","√ø"," _Charger une table","√ø"," _Fusionner une table","√ø"," _Compilation .EXE","√ø"," _Quitter "};
 
 	cache_souris();
 	resultat_menu=menu_der(3,3,27,11,11,DOUBLE,WHITE,RED,DARKGRAY,LIGHTGRAY,BLACK,LIGHTRED,str);
@@ -680,19 +682,19 @@ void menu_fichier(void)
 
 	if (resultat_menu==1) {
 		cache_souris();
-		gettext(1, 1, 80, 25,ecran); 		// Pour ne pas àtre obliger de tout rÇafficher
+		gettext(1, 1, 80, 25,ecran); 		// Pour ne pas ÀÜtre obliger de tout r‚Äöafficher
 		cadre_plein(20,7,70,9,SIMPLE,WHITE,BLUE,1);      // dessine le cadre
 		gotoxy(23,8);color(YELLOW,BLUE);
 		cprintf("Engeristrement de la table >");
 		color(11,BLUE);cprintf(" %s",nom_defaut);
 		delay(500);
 		sauver_table(nom_defaut);
-		puttext(1,1,80,25,ecran); 		// Pour ne pas àtre obliger de tout rÇafficher
+		puttext(1,1,80,25,ecran); 		// Pour ne pas ÀÜtre obliger de tout r‚Äöafficher
 		montre_souris();
 	}
 
 	if (resultat_menu==2) {
-		gettext(1, 1, 80, 25,ecran); 		// Pour ne pas àtre obliger de tout rÇafficher
+		gettext(1, 1, 80, 25,ecran); 		// Pour ne pas ÀÜtre obliger de tout r‚Äöafficher
 		cadre_plein(20,9,70,11,DOUBLE,WHITE,BLUE,1);      // dessine le cadre
 		gotoxy(23,10);color(11,1);
 		cprintf("Nom >");
@@ -708,7 +710,7 @@ void menu_fichier(void)
 		}
 
 		sauver_table(nom_defaut);
-		puttext(1,1,80,25,ecran); 		// Pour ne pas àtre obliger de tout rÇafficher
+		puttext(1,1,80,25,ecran); 		// Pour ne pas ÀÜtre obliger de tout r‚Äöafficher
 		montre_souris();
 	}
 
@@ -751,7 +753,7 @@ char afficher_liste(void)
 	color(7,7);
 	clrscr();
 	window(1,1,80,25);
-*/                        //198 199 209 202 197 210 —›ﬁ«……ﬁ
+*/                        //198 199 209 202 197 210 √ë√ù√û√á√â√â√û
 //	locatext(60,20,"",15+16*1);
 //						  ZECRUSHER
 //	locatext(60,21,"          ",15+16*1);
@@ -782,8 +784,8 @@ void presentation(void)
 {
 	cadre_plein(24,7,56,11,0,WHITE,WHITE,1);  // cadre rep
 	locatext(24,7,"             A L E S             ",WHITE+16*BLUE);
-	locatext(1,24," ALES /charger fichier.als pour charger une police de caractäre                 ",WHITE+16*7);
-	locatext(1,25," ALES /modif   fichier.als pour modifier une police de caractäre                  ",WHITE+16*7);
+	locatext(1,24," ALES /charger fichier.als pour charger une police de caract≈†re                 ",WHITE+16*7);
+	locatext(1,25," ALES /modif   fichier.als pour modifier une police de caract≈†re                  ",WHITE+16*7);
 
 	titre(36,9,YELLOW,1,DARKGRAY,WHITE, " < OK > ",0);
 	bouton_xyl(36,9,8); // Gestion du Bouton OK
@@ -821,7 +823,7 @@ int recuperer_police(char *nom_source,char *nom_objet)
 		for (int j=0;j<16;j++) {
 			tab[j]=fgetc(in);
 		}
-		definition_ascii_(tab,k); // LOGO   ”◊Ù !!!
+		definition_ascii_(tab,k); // LOGO   √ì√ó√¥ !!!
 
 		for (int i=0;i<16;i++) {
 			fputc(((int)tab[i]),out);
@@ -844,7 +846,7 @@ void creer_ligne(int num)
 	afficher_code_ascii(num);
 	gotoxy(valeur_xxreel,valeur_yyreel);
 	color(10,1);
-	cprintf("€");
+	cprintf("√õ");
 
 	do
 	{
