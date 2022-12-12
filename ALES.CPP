@@ -1,10 +1,11 @@
 // Programme ALES  par ZeCrusher
 // Utilitaire en Mode texte 80x25
-// R‚alis‚ le:     1994/12/12
+// Réalisé le : 1994/12/12 
 // Mise à jour du code : 2022/11/29
 
 
-// A compiler avec Borlands C++ 3.1 et DOSBOX.
+// A compiler avec Borlands C++ 3.1 
+// Pour un PC recent -> DOSBOX.
 
 #if !defined( __DOS_H )
  #include <dos.h>
