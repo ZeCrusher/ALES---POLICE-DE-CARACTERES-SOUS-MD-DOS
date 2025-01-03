@@ -150,6 +150,10 @@ int main(char argc, char **argv)
 		cprintf("\n\rALES /charger fichier.als \n\r");
 		color(7,0);
 		cprintf("  pour charger une police de caractŠre dans l'‚diteur de caractŠres (16x8)\n\r");
+		color(0,7);
+		cprintf("\n\rALES /n|/N | /nouveau|NOUVEAU \n\r");
+		color(7,0);
+		cprintf("  pour la création d'une nouvelle police (16x8) \n\r"); /* reste à savoir si le soft part d'un fichier vide */
 		printf("\n\n\n");
 		exit(0);
 	}
@@ -180,8 +184,19 @@ int main(char argc, char **argv)
 			if (charger_table_(argv[2])==-1)	{
 				exit(0);
 			}
-			strcpy(nom_defaut,argv[2]);
+			
 		}
+	}
+
+
+	if ((strcmp(argv[1],"/nouveau")==0)||(strcmp(argv[1],"/NOUVEAU")==0)||(strcmp(argv[1],"/N")==0)||(strcmp(argv[1],"/n")==0))
+	{
+		color(7,0);clrscr();
+		printf(" ALES par ZeCrusher \n");
+		printf(" Création d'un nouveau fichier :  \n");
+		
+		strcpy(nom_defaut,"nouveau");		
+		sauver_table("nouveau.bak");
 	}
 
 	presentation();
@@ -675,7 +690,7 @@ void menu_fichier(void)
 	char ecran[4096];
 	char r[100];
 	char *str[]={" _Enregister  "," Enregister _Sous ","ÿ"," _Charger une table","ÿ"," _Fusionner une table","ÿ"," _Compilation .EXE","ÿ"," _Quitter "};
-
+        /*                 1                    2           3           4             5        6                  7        8              9      10  */   
 	cache_souris();
 	resultat_menu=menu_der(3,3,27,11,11,DOUBLE,WHITE,RED,DARKGRAY,LIGHTGRAY,BLACK,LIGHTRED,str);
 	bouton=ZERO_BOUTON_APPUYER;
@@ -683,19 +698,19 @@ void menu_fichier(void)
 
 	if (resultat_menu==1) {
 		cache_souris();
-		gettext(1, 1, 80, 25,ecran); 		// Pour ne pas ˆtre obliger de tout r‚afficher
+		gettext(1, 1, 80, 25,ecran); 		// Pour ne pas être obliger de tout réafficher
 		cadre_plein(20,7,70,9,SIMPLE,WHITE,BLUE,1);      // dessine le cadre
 		gotoxy(23,8);color(YELLOW,BLUE);
 		cprintf("Engeristrement de la table >");
 		color(11,BLUE);cprintf(" %s",nom_defaut);
 		delay(500);
 		sauver_table(nom_defaut);
-		puttext(1,1,80,25,ecran); 		// Pour ne pas ˆtre obliger de tout r‚afficher
+		puttext(1,1,80,25,ecran); 		// Pour ne pas ˆtre obliger de tout réafficher
 		montre_souris();
 	}
 
 	if (resultat_menu==2) {
-		gettext(1, 1, 80, 25,ecran); 		// Pour ne pas ˆtre obliger de tout r‚afficher
+		gettext(1, 1, 80, 25,ecran); 		// Pour ne pas être obliger de tout réafficher
 		cadre_plein(20,9,70,11,DOUBLE,WHITE,BLUE,1);      // dessine le cadre
 		gotoxy(23,10);color(11,1);
 		cprintf("Nom >");
@@ -715,6 +730,8 @@ void menu_fichier(void)
 		montre_souris();
 	}
 
+/* 3 vide */
+
 	if (resultat_menu==4) {
 		if (found_file(fichier,r,"*.als","Choisir une Police ")==1) {
 			charger_table_(fichier);
@@ -723,6 +740,8 @@ void menu_fichier(void)
 		afficher_code_ascii(0);
 		afficher_liste();
 	}
+
+/* 5 vide */
 
 	if (resultat_menu==6) {
 		if (found_file(fichier,r,"*.als","Choisir une Police pour la fusion")==1) {
@@ -733,9 +752,11 @@ void menu_fichier(void)
 		afficher_liste();
 	}
 	if (resultat_menu==8) {
+
 		afficher_code_ascii(0);
 		afficher_liste();
-	}
+
+       }
 
 	if (resultat_menu==10) {
 		color(7,0);clrscr();printf(" ALES par ZeCrusher  \n");
@@ -860,5 +881,10 @@ void creer_ligne(int num)
 
 	}
 	while (bouton==BOUTON_DROIT);
+
+}
+
+char creer_executable(void)
+{
 
 }
