@@ -190,7 +190,7 @@ int main(char argc, char **argv)
 
 /*
 * A TESTER ! 
-/*
+*/
 
 	if ((strcmp(argv[1],"/nouveau")==0)||(strcmp(argv[1],"/NOUVEAU")==0)||(strcmp(argv[1],"/N")==0)||(strcmp(argv[1],"/n")==0))
 	{
