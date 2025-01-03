@@ -1,7 +1,7 @@
 // Programme ALES  par ZeCrusher
 // Utilitaire en Mode texte 80x25
 // Réalisé le : 1994/12/12 
-// Mise à jour du code : 2022/11/29
+// Mise à jour du code : 2025/01/03
 
 
 // A compiler avec Borlands C++ 3.1 
@@ -188,15 +188,23 @@ int main(char argc, char **argv)
 		}
 	}
 
+/*
+* A TESTER ! 
+/*
 
 	if ((strcmp(argv[1],"/nouveau")==0)||(strcmp(argv[1],"/NOUVEAU")==0)||(strcmp(argv[1],"/N")==0)||(strcmp(argv[1],"/n")==0))
 	{
 		color(7,0);clrscr();
 		printf(" ALES par ZeCrusher \n");
 		printf(" Création d'un nouveau fichier :  \n");
-		
-		strcpy(nom_defaut,"nouveau");		
+
+		/* Chargement de la police DOS.ALS pour ne par partir de zéro */
+		/* Vous devez avoir le fichier DOS.ALS dans le même dossier que l'exécutable ALES.EXE */
+		charger_table_("DOS.ALS");
+
+		strcpy(nom_defaut,"NOUVEAU.ALS");		
 		sauver_table("nouveau.bak");
+
 	}
 
 	presentation();
